@@ -19,3 +19,91 @@
   <li>/layout.js: Definição do layout raiz da aplicação, com fontes personalizadas e estrutura HTML básica.</li>
 </ul>
 
+<h1>Funcionamento</h1>
+<p>A aplicação faz uma requisição para a Superhero API para buscar informações de heróis. Após obter os dados, a aplicação renderiza os cards de heróis na página.</p>
+
+<h1>Detalhes da Requisição</h1>
+<p>No arquivo page.js, a função useEffect faz uma chamada assíncrona para a API utilizando o Access Token gerado. Caso a requisição seja bem-sucedida, os dados dos heróis são armazenados no estado da aplicação (setHerois).</p>
+
+```
+useEffect(() => {
+  async function fetchHerois() {
+    try {
+      const res = await fetch(
+        "https://superheroapi.com/api/9c0ec6aa9f84394384ec249fd87e389c/character-id"
+      );
+      const data = await res.json();
+      await setHerois(data);
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  fetchHerois();
+}, []);
+```
+
+<p>Os heróis são então mapeados para componentes HeroCard, que exibem o nome, imagem, inteligência e força de cada herói.</p>
+
+<h1>Estilos</h1>
+<p>Os estilos são aplicados para garantir um layout limpo e moderno:</p>
+<ul>
+  <li>Home.module.css: Define o estilo dos cards e da grid de heróis, com flexbox para exibição em grid.</li>
+  <li>global.css: Estilos globais, incluindo a definição da fonte e o fundo da página.</li>
+</ul>
+
+```
+const HeroCard = ({ name, image, intelligence, strength }) => (
+  <div className="card">
+    <img className="heroImage" src={image.url} alt={name} />
+    <h1>{name}</h1>
+    <p>Intelligence: <span style={{ backgroundColor: 'green', width: `${intelligence}%` }} /></p>
+    <p>Strength: <span style={{ backgroundColor: 'blue', width: `${strength}%` }} /></p>
+  </div>
+);
+```
+
+```
+.container {
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.heroesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+p {
+  padding: 0 10px;
+}
+
+p span {
+  display: block;
+  height: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+```
+

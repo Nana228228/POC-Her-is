@@ -1,39 +1,30 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import HeroCard from "./components/HeroCard";
-
+import styles from "./page.module.css";
+import ListaDeAnimeCard from './components/ListaDeAnimeCard.jsx'
 export default function Home() {
-  const [herois, setHerois] = useState([]);
+  const [animes, setAnimes] = useState([]); // Initialize as an empty array
+
   useEffect(() => {
-    async function fetchHerois() {
+    async function fetchAnimes() {
       try {
-        const res = await fetch(
-          "https://superheroapi.com/api/9c0ec6aa9f84394384ec249fd87e389c/character-id"
-        );
-        const data = await res.json();
-        await setHerois(data);
-        console.log(data);
+          const res = await fetch("https://api.jikan.moe/v4/seasons/2021/spring?sfw");
+        const dados = await res.json(); // Adjust based on the API response structure
+        setAnimes(dados); // Assuming 'response' contains an array of heroes
+        console.log(response);
       } catch (err) {
-        console.log(err);
+        console.error("Failed to fetch heroes:", err);
       }
     }
-    herois;
-    fetchHerois();
+
+    fetchAnimes();
   }, []);
-    
+
   return (
-        <div id="heroes">
-          {herois.map((hero) => (
-            <HeroCard
-            key={hero.id}
-            name={hero.name}
-            image={hero.image}
-            intelligence={hero.intelligence}
-            strength={hero.strength}
-          />
-        ))}
-      </div>
-    );
+      <div className={styles.container}>
+          <ListaDeAnimeCard animes={animes.data}>
+              
+          </ListaDeAnimeCard>
+    </div>
+  );
 }
-
-

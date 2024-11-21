@@ -1,45 +1,35 @@
-import React from 'react';
+import React from "react";
+import styles from "./ListaDeAnimeCard.module.css";
 
-const HeroCard = ({ hero }) => {
-  const { name, powerstats, image } = hero;
-
+export default function ListaDeAnimeCard({ animes }) {
   return (
-    <article style={styles.card}>
-      <img src={image.url} alt={name} style={styles.image} />
-      <h1 style={styles.title}>{name}</h1>
-      <p>
-        Intelligence: <span style={{ ...styles.stat, width: `${powerstats.intelligence}%`, backgroundColor: '#F9B32F' }}></span>
-      </p>
-      <p>
-        Strength: <span style={{ ...styles.stat, width: `${powerstats.strength}%`, backgroundColor: '#FF7C6C' }}></span>
-      </p>
-    </article>
+    <div className={styles.container}>
+      <div className={styles.div}>
+      {Array.isArray(animes) &&
+        animes
+          .filter(
+            (data) =>
+              data &&
+              data.title &&
+              data.images &&
+              data.images.jpg &&
+              data.images.jpg.large_image_url
+          ) // Filtra itens válidos
+        .map((data) => (
+          <article className={styles.card}>
+            <img
+              src={data.images.jpg.large_image_url}
+              alt={"imagem de" + data.title}
+              key={data.id || Math.random()} // Gera uma chave segura
+              className={styles.image}
+              
+            />
+            <h1 className={styles.title}>{data.title}</h1>
+            <p >Episódios: {data.episodes}</p>
+            <p>Favoritos: {data.favorites}</p>
+          </article>
+          ))}
+      </div>
+    </div>
   );
-};
-
-const styles = {
-  card: {
-    height: '720px',
-    width: '300px',
-    backgroundColor: '#fff',
-    borderRadius: '10px',
-    margin: '10px',
-    padding: '10px',
-  },
-  image: {
-    borderRadius: '10px 10px 0 0',
-    width: '100%',
-    maxHeight: '400px',
-  },
-  title: {
-    textAlign: 'center',
-  },
-  stat: {
-    display: 'block',
-    height: '10px',
-    borderRadius: '5px',
-    marginTop: '5px',
-  },
-};
-
-export default HeroCard;
+}

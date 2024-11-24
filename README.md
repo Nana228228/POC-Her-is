@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>README - Node.js Project</title>
-</head>
-<body>
-  <h1>Node.js Project - Hero and Anime Cards</h1>
+  <h1>Node.js Project - Anime Cards</h1>
   <p>
-    Este projeto é uma aplicação desenvolvida em Node.js e React que utiliza estilos modularizados e componentes reutilizáveis para exibir informações sobre heróis e animes. Aqui está uma explicação detalhada dos arquivos e componentes usados.
+    Este projeto é uma aplicação desenvolvida em Node.js e React que utiliza estilos modularizados e componentes reutilizáveis para exibir informações sobre animes. Aqui está uma explicação detalhada dos arquivos e componentes usados.
   </p>
 
   <h2>1. Estrutura do Projeto</h2>
@@ -149,14 +141,5 @@
     </code>
   </pre>
 
-  <h2>5. Como Rodar o Projeto</h2>
-  <p>Siga os passos abaixo para executar a aplicação localmente:</p>
-  <ol>
-    <li>Clone o repositório: <code>git clone https://github.com/seu-repositorio.git</code></li>
-    <li>Instale as dependências: <code>npm install</code></li>
-    <li>Inicie o servidor: <code>npm run dev</code></li>
-    <li>Acesse no navegador: <code>http://localhost:3000</code></li>
-  </ol>
-</body>
-</html>
+
 

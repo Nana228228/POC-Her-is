@@ -68,7 +68,7 @@ app/
   <p>
     Este componente exibe informações de heróis, incluindo nome, estatísticas (inteligência e força) e uma imagem.
   </p>
-  ```
+  
     const HeroCard = ({ hero }) => {
       const { name, powerstats, image } = hero;
 
@@ -87,15 +87,14 @@ app/
     };
 
     export default HeroCard;
-  ````
+  
 
 
   <h3>2.2 AnimeCard.js</h3>
   <p>
     Este componente exibe informações de animes, como título, número de episódios e favoritos.
   </p>
-  <pre>
-    <code>
+  
     import React from "react";
     import styles from "./ListaDeAnimeCard.module.css";
 
@@ -123,15 +122,13 @@ app/
         </div>
       );
     }
-    </code>
-  </pre>
+
 
   <h2>3. Estilos</h2>
 
   <h3>3.1 Home.module.css</h3>
   <p>Estiliza o layout da página inicial.</p>
-  <pre>
-    <code>
+  
     .container {
         padding: 20px;
         background-color: #f0f0f0;
@@ -142,13 +139,10 @@ app/
         flex-wrap: wrap;
         gap: 20px;
     }
-    </code>
-  </pre>
-
+  
   <h3>3.2 ListaDeAnimeCard.module.css</h3>
   <p>Define os estilos dos cards de animes.</p>
-  <pre>
-    <code>
+
     .card {
         width: 23%; 
         align-content: space-between;
@@ -158,17 +152,13 @@ app/
         margin: 10px;
         padding: 10px;
     }
-    </code>
-  </pre>
-
   <h2>4. Lógica Principal</h2>
 
   <h3>4.1 page.js</h3>
   <p>
     Contém a lógica para buscar dados de heróis de uma API e renderizá-los na tela utilizando o componente <code>HeroCard</code>.
   </p>
-  <pre>
-    <code>
+  
     useEffect(() => {
       async function fetchHerois() {
         try {
@@ -181,8 +171,6 @@ app/
       }
       fetchHerois();
     }, []);
-    </code>
-  </pre>
 
 
 

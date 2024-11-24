@@ -68,10 +68,7 @@ app/
   <p>
     Este componente exibe informações de heróis, incluindo nome, estatísticas (inteligência e força) e uma imagem.
   </p>
-  <pre>
-    <code>
-    import React from 'react';
-
+  ```
     const HeroCard = ({ hero }) => {
       const { name, powerstats, image } = hero;
 
@@ -90,8 +87,8 @@ app/
     };
 
     export default HeroCard;
-    </code>
-  </pre>
+  ````
+
 
   <h3>2.2 AnimeCard.js</h3>
   <p>

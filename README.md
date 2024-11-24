@@ -1,9 +1,55 @@
-  <h1>Node.js Project - Anime Cards</h1>
-  <p>
-    Este projeto é uma aplicação desenvolvida em Node.js e React que utiliza estilos modularizados e componentes reutilizáveis para exibir informações sobre animes. Aqui está uma explicação detalhada dos arquivos e componentes usados.
-  </p>
+# POC Heroes: React com Next.js
 
-  <h2>1. Estrutura do Projeto</h2>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+   * [Introdução](#introducao)
+   * [Começando o projeto ](#comecando)
+   * [Estrutura inicial ](#estrutura)
+   * [Componentes](#componentes)
+      - [Button](#button)
+      - [Card](#card)
+   * [Estilos Globais](#cssGlobal)
+   * [Estilos Modulares](#cssModular)
+   * [Page](#page)
+   * [Layout](#layout)
+   * [Autores](#autores)
+
+
+<h2 id="introducao">Introdução</h2>
+Bem-vindo ao repositório POC Heroes: React com Next.js🎉 Este é um recurso gratuito que ensina o passo a passo para criar um projeto React usando o bootstraping do Next.js. Este projeto é uma aplicação desenvolvida em Node.js e React que utiliza estilos modularizados e componentes reutilizáveis para exibir informações sobre animes. Aqui está uma explicação detalhada dos arquivos e componentes usados.
+
+<h2 id="comecando">Começando o projeto</h2>
+
+Para criar um projeto usando o framework Next.js, digite no terminal: 
+```bash
+nmx create-next-app@latest nome-do-projeto
+```
+
+Para entrar no diretório do projeto e iniciar o servidor de desenvolvimento, digite:
+
+```bash
+cd nome-do-projeto
+npm run dev
+```
+
+<h2 id="estrutura">Estrutura inicial</h2>
+
+<pre>
+Estrutura inicial:
+  
+app/
+├── components/
+│   ├── HeroCard.js
+│   ├── ListaDeAnimeCard.js
+│   └── ListaDeAnimeCard.module.css
+├── styles/
+│   └── Home.module.css
+├── globals.css
+├── layout.js
+└── page.js
+
+</pre>
+<h2>1. Estrutura do Projeto</h2>
   <p>
     O projeto está organizado em pastas para separar a lógica, os estilos e os componentes. Abaixo estão as principais pastas e arquivos:
   </p>

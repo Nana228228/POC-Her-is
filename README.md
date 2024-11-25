@@ -67,33 +67,34 @@ app/
     Este componente exibe informações de heróis, incluindo nome, estatísticas (inteligência e força) e uma imagem.
   </p>
   
-  ```
-  const HeroCard = ({ hero }) => {
-      const { name, powerstats, image } = hero;
+  `````
+ const HeroCard = ({ hero }) => {
+  const { name, powerstats, image } = hero;
 
-      return (
-        <article style={styles.card}>
-          <img src={image.url} alt={name} style={styles.image} />
-          <h1 style={styles.title}>{name}</h1>
-          <p>
-            Intelligence: <span style={{ ...styles.stat, width: `${powerstats.intelligence}%`, backgroundColor: '#F9B32F' }}></span>
-          </p>
-          <p>
-            Strength: <span style={{ ...styles.stat, width: `${powerstats.strength}%`, backgroundColor: '#FF7C6C' }}></span>
-          </p>
-        </article>
-      );
-    };
+  return (
+    <article style={styles.card}>
+      <img src={image.url} alt={name} style={styles.image} />
+      <h1 style={styles.title}>{name}</h1>
+      <p>Intelligence: 
+        <span style={{ ...styles.stat, width: `${powerstats.intelligence}%`, backgroundColor: '#F9B32F' }}></span>
+      </p>
+      <p>Strength: 
+        <span style={{ ...styles.stat, width: `${powerstats.strength}%`, backgroundColor: '#FF7C6C' }}></span>
+      </p>
+    </article>
+  );
+};
 
-    export default HeroCard;
-```
+export default HeroCard;
+`````
 
 
   <h3>2.2 AnimeCard.js</h3>
   <p>
     Este componente exibe informações de animes, como título, número de episódios e favoritos.
   </p>
-  
+
+```
     import React from "react";
     import styles from "./ListaDeAnimeCard.module.css";
 
@@ -121,7 +122,7 @@ app/
         </div>
       );
     }
-
+```
 
   <h2>3. Estilos</h2>
 

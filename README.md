@@ -5,19 +5,19 @@
    * [Introdução](#introducao)
    * [Começando o projeto ](#comecando)
    * [Estrutura inicial ](#estrutura)
-   * [Componentes](#componentes)
-      - [Button](#button)
-      - [Card](#card)
+   * [Componentes e lógica](#componentes)
+      - [Hero Card](#button)
+      - [Anime Card](#card)
    * [Estilos Globais](#cssGlobal)
    * [Estilos Modulares](#cssModular)
-   * [Page](#page)
-   * [Layout](#layout)
+   * [Lógica Principal](#page)
+   * [Funcionalidades](#layout)
    * [Autores](#autores)
 
 
 <h2 id="introducao">Introdução</h2>
-Bem-vindo ao repositório POC Heroes: React com Next.js.
-Este é um projeto front-end criado com React e Next.js que exibe informações sobre heróis e animes. Ele apresenta uma organização modular com componentes reutilizáveis e estilização consistente.
+Bem-vindo ao POC Heroes: React com Next.js!
+Este projeto front-end, desenvolvido com React e Next.js, apresenta uma interface para exibir informações sobre heróis e animes. Ele é organizado de forma modular, com componentes reutilizáveis e estilização consistente, utilizando CSS Modules.
 
 <h2 id="comecando">Começando o projeto</h2>
 
@@ -49,20 +49,17 @@ app/
 ├── layout.js
 └── page.js
 
-</pre>
-<h2>1. Estrutura do Projeto</h2>
-  <p>
-    O projeto está organizado em pastas para separar a lógica, os estilos e os componentes. Abaixo estão as principais pastas e arquivos:
-  </p>
-  <ul>
-    <li><strong>app/</strong>: Contém os componentes principais da aplicação.</li>
-    <li><strong>components/</strong>: Componentes reutilizáveis, como <code>HeroCard</code> e <code>AnimeCard</code>.</li>
-    <li><strong>styles/</strong>: Estilos CSS modularizados para componentes específicos.</li>
-    <li><strong>globals.css</strong>: Estilos globais aplicados a toda a aplicação.</li>
-    <li><strong>layout.js</strong>: Define o layout raiz da aplicação e fontes customizadas.</li>
-    <li><strong>page.js</strong>: Lógica principal da página inicial.</li>
-  </ul>
-
+<h1>Principais Diretórios e Arquivos:</h1>
+<p>O projeto está organizado em pastas para separar a lógica, os estilos e os componentes. Abaixo estão as principais pastas e arquivos:</p>
+<ul>
+<li>app/: Contém os principais componentes da aplicação.</li>
+<li>components/: Componentes reutilizáveis, como HeroCard e AnimeCard.</li>
+<li>styles/: Arquivos CSS modulares específicos para cada componente.</li>
+<li>globals.css: Define os estilos globais aplicados em toda a aplicação.</li>
+<li>layout.js: Gerencia o layout global da aplicação.</li>
+<li>page.js: Contém a lógica da página inicial.</li>
+</ul>
+  
   <h2>2. Componentes e Lógica</h2>
 
   <h3>2.1 HeroCard.js</h3>
@@ -70,7 +67,8 @@ app/
     Este componente exibe informações de heróis, incluindo nome, estatísticas (inteligência e força) e uma imagem.
   </p>
   
-    const HeroCard = ({ hero }) => {
+  ```
+  const HeroCard = ({ hero }) => {
       const { name, powerstats, image } = hero;
 
       return (
@@ -88,7 +86,7 @@ app/
     };
 
     export default HeroCard;
-  
+```
 
 
   <h3>2.2 AnimeCard.js</h3>
